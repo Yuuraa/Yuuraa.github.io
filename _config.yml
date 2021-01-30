@@ -15,12 +15,12 @@
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
+locale                   : "ko-KR" # "en-US"
 title                    : "Yuuraa's DEV Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Yura Choi"
-description              : "An amazing website."
+description              : "클라우드 좋아하는 AI 엔지니어 지망생"
 url                      : "https://yuuraa.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Yuuraa/github-blog" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -51,8 +51,8 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
+search                   : true # false (default)
+search_full_content      : true # false (default)
 search_provider          : # lunr (default), algolia, google
 algolia:
   application_id         : # YOUR_APPLICATION_ID
@@ -85,17 +85,17 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : "google" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id          :
-    anonymize_ip         : # true, false (default)
+    anonymize_ip         : false # true, false (default)
 
 
 # Site Author
 author:
   name             : "Yura Choi"
   avatar           : "/assets/images/windy.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "척척(?)학사. 네트워크 인공지능 랩 인턴!"
   location         : "Here"
   email            :
   links:
@@ -145,6 +145,8 @@ footer:
 include:
   - .htaccess
   - _pages
+  - _pets
+  - _posts
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -268,15 +270,15 @@ compress_html:
 # TODO
 # # Collections
 # collections:
-#   # recipes:
-#   #   output: true
-#   #   permalink: /:collection/:path/
-#   pets:
-#     output: true
-#     permalink: /:collection/:path/
-#   # portfolio:
-#   #   output: true
-#   #   permalink: /:collection/:path/
+  # recipes:
+  #   output: true
+  #   permalink: /:collection/:path/
+  # pets:
+  #   output: true
+  #   permalink: /:collection/:path/
+  # portfolio:
+  #   output: true
+  #   permalink: /:collection/:path/
 
 
 # Defaults
@@ -296,7 +298,7 @@ defaults:
   # TODO
   # _pets
   - scope:
-      path: ""
+      path: "_pets"
       type: pets
     value:
       layout: single
