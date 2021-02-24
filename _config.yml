@@ -97,7 +97,8 @@ author:
   avatar           : "/assets/images/windy.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "척척(?)학사. 네트워크 인공지능 랩 인턴!"
   location         : "Here"
-  email            :
+  email            : "yoorachoi@gm.gist.ac.kr"
+  home: "https://yuuraa.github.io"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"

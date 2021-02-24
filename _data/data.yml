@@ -10,7 +10,6 @@ sidebar:
     name: Yura Choi
     tagline: Full Stack Developer
     avatar: profile.jpeg  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
-
     # Sidebar links
     email: yoorachoi8937@gmail.com
     # phone: 012 345 6789
@@ -20,26 +19,26 @@ sidebar:
     telegram: # add your nickname without '@' sign
     gitlab:
     bitbucket:
-    twitter: '@webjeda'
+    twitter: '@Yura02786865'
     stack-overflow: # Number/Username, e.g. 123456/alandoe
     codewars:
     goodreads: # Number-Username, e.g. 123456-alandoe
 
     languages:
-      - idiom: English
+      - idiom: Korean
         level: Native
 
-      - idiom: French
+      - idiom: English
         level: Professional
 
-      - idiom: Spanish
-        level: Professional
+      # - idiom: Spanish
+      #   level: Professional
 
     interests:
-      - item: Climbing
+      - item: Painting
         link:
 
-      - item: Snowboarding
+      - item: Design
         link:
 
       - item: Cooking
