@@ -17,26 +17,15 @@ reverse 함수는 Template의 url 태그와 비슷한 역할을 한다.
 
 주어진 view와 파라미터들을 사용해 매칭되는 절대 참조 경로를 반환하는데, 아래와 같이 사용한다.
 
-```python3 
-reverse(viewname, urlconf=None, args=None, kwargs=None, current_app=None)
-```
-viewname으로는 urls.py 에서 정의한 이름을 넣을 수도 있고, 또는 view 그 자체를 넣을 수도 있다
+<img src="../assets/images/django/how to use reverse.png">
 
-```python3
-# urls.py
-from news import views
 
-path('archive/', views.archive, name='news-archive')
+viewname으로는 urls.py에서 정의한 이름을 사용할 수도 있고, view 객체를 사용할 수도 있다
 
-# views.py
-# 이름 지어진 URL을 사용하는 경우
-reverse('news-archive')
+<img src="../assets/images/django/urls and views.png">
 
-# 호출 가능한 object를 사용하는 경우 (권장되지 않음)
-from news import views
-reverse(views.archive)
-```
 <br/>
+
 
 ### reverse_lazy
 reverse를 lazy 하게 구현한 버전이다. 
@@ -74,8 +63,6 @@ reverse를 사용한 url 반환이 URLConf 설정값이 로딩되기 전에 필�
 ex)
 
 <img src="../assets/images/django/reverse_error.png">
-
-
 
 
 
