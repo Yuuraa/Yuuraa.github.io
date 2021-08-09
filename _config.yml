@@ -295,16 +295,6 @@ defaults:
       comments: true
       share: true
       related: true
-  # TODO
-  # _pets
-  - scope:
-      path: "_pets"
-      type: pets
-    value:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
   # # _pages
   # - scope:
   #     path: "_pages"
