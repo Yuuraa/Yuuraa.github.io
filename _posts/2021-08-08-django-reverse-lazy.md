@@ -2,6 +2,7 @@
 title: "Django의 reverse_lazy vs. reverse" 
 date: 2021-08-08 22:34:30 -0400
 categories: djange reverse_lazy Python
+comments: true
 ---
 
 ### Django urls의 함수들
