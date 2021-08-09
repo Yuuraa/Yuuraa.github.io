@@ -17,12 +17,12 @@ reverse 함수는 Template의 url 태그와 비슷한 역할을 한다.
 
 주어진 view와 파라미터들을 사용해 매칭되는 절대 참조 경로를 반환하는데, 아래와 같이 사용한다.
 
-<img src="../assets/images/django/how to use reverse.png">
+<img src="/assets/images/django/how to use reverse.png">
 
 
 viewname으로는 urls.py에서 정의한 이름을 사용할 수도 있고, view 객체를 사용할 수도 있다
 
-<img src="../assets/images/django/urls and views.png">
+<img src="/assets/images/django/urls and views.png">
 
 <br/>
 
@@ -62,7 +62,7 @@ reverse를 사용한 url 반환이 URLConf 설정값이 로딩되기 전에 필�
 
 ex)
 
-<img src="../assets/images/django/reverse_error.png">
+<img src="/assets/images/django/reverse_error.png">
 
 
 
@@ -84,7 +84,7 @@ django.core.exceptions.ImproperlyConfigured: The included URLconf 'sampleapp.url
 
 쟝고의 특정 view에서 작업이 성공했을 때 이동할 url을 지정해주는 경우를 예로 들어 보면, 아래와 같이 할 때 오류가 나지 않는다
 
-<img src="../assets/images/django/reverse_lazy_good.png">
+<img src="/assets/images/django/reverse_lazy_good.png">
 
 
 
