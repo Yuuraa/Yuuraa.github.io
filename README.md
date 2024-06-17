@@ -1,2 +1,2 @@
-# bhkim94.github.io
+# Yuuraa.github.io
 This template is from <a href="https://jonbarron.info/">Jon Barron</a>.
