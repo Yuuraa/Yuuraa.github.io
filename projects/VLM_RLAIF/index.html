@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Factorizing Perception and Policy for Interactive Instruction Following">
-  <meta name="keywords" content="Embodied AI, Modularization, Object-Centric">
+        content="Tuning Large Multimodal Models for Videos using Reinforcement Learning from AI Feedback">
+  <meta name="keywords" content="Multimodal Alignment, Video Multimodal Large Model, Reinforcement Learning from AI Feedback">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Factorizing Perception and Policy for Interactive Instruction Following</title>
+  <title>Tuning Large Multimodal Models for Videos using Reinforcement Learning from AI Feedback</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -42,100 +42,80 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
+  <a class="navbar-item" href="https://yuuraa.github.io">
+    <span class="icon">
+        <i class="fas fa-home"></i>
+    </span>
     </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://bhkim94.github.io">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
+
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://bhkim94.github.io/projects/CL-ALFRED">
-            CL-ALFRED
-          </a>
-          <a class="navbar-item" href="https://bhkim94.github.io/projects/CAPEAM">
-            CAPEAM
-          </a>
-          <a class="navbar-item" href="https://bhkim94.github.io/projects/MCR-Agent">
-            MCR-Agent
-          </a>
-          <a class="navbar-item" href="https://bhkim94.github.io/projects/ABP">
-            ABP
-          </a>
-          <a class="navbar-item" href="https://bhkim94.github.io/projects/MOCA">
-            MOCA
-          </a>
-        </div>
-      </div>
     </div>
-
-  </div>
-</nav>
-
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://yuuraa.github.io">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        </a>
+  
+    </div>
+  </nav>   -->
 
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered is-full-width">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title" style="font-size:45px">
-            Factorizing Perception and Policy for Interactive Instruction Following
+          <h1 class="title is-1 publication-title" style="font-size:41px">
+            Tuning Large Multimodal Models for Videos using Reinforcement Learning from AI Feedback
           </h1>
           <h1 class="title is-4 publication-title">
-            ICCV 2021
+            ACL 2024
           </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://kunalmessi10.github.io/">Kunal Pratap Singh</a><sup>*,2,§</sup>,
-            </span>
-              <span class="author-block">
-                <a href="https://www.linkedin.com/in/suvaansh-bhambri-1784bab7/">Suvaansh Bhambri</a><sup>*,1</sup>,
-              </span>
-            <span class="author-block">
-              <a href="https://bhkim94.github.io">Byeonghwi Kim</a><sup>*,1</sup>,
+              <a href="https://dcahn12.github.io" target="_new">Daechul Ahn</a><sup>1,3</sup>,
             </span>
             <span class="author-block">
-              <a href="http://roozbehm.info/">Roozbeh Mottaghi</a><sup>2</sup>,
+              <a href="https://yuuraa.github.io" target="_new">Yura Choi</a><sup>1,3</sup>,
             </span>
             <span class="author-block">
-              <a href="https://ppolon.github.io">Jonghyun Choi</a><sup>1,†</sup>
+              <a href="https://yj-yu.github.io/home/" target="_new">Youngjae Yu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://dykang.github.io" target="_new">Dongyeop Kang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ppolon.github.io">Jonghyun Choi</a><sup>3</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>GIST, South Korea</span>,
-            <span class="author-block"><sup>2</sup>Allen Institute for AI</span>
-            <br>
-            <span class="author-block"><sup>§</sup>Work done while with GIST</span>
-            <span class="author-block"><sup>†</sup>Corresponding author</span>
+            <span class="author-block"><sup>1</sup>Yonsei University,</span>
+            <span class="author-block"><sup>2</sup>University of Minnesota</span>
+            <span class="author-block"><sup>3</sup>Seoul National University</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
+              <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Singh_Factorizing_Perception_and_Policy_for_Interactive_Instruction_Following_ICCV_2021_paper.pdf"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>Paper (Coming Soon)</span>
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2012.03208"
+                <a href="https://arxiv.org/pdf/2402.03746" target="_new"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -144,23 +124,44 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://github.com/gistvision/moca"
+                <a href="https://github.com/yonseivnl/vlm-rlaif" target="_new"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>-->
+              <!-- Code Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
                   </a>
-              </span>
+              </span>-->
+              <!-- Dataset Link.
               <span class="link-block">
-                <a href="https://huggingface.co/datasets/byeonghwikim/abp_dataset"
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
                   </a>
-              </span>
+              </span>-->
             </div>
           </div>
         </div>
@@ -168,19 +169,6 @@
     </div>
   </div>
 </section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src='static/figures/teaser.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:80%;max-width:80%">
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Modular Object-Centric Approach (MOCA)</span>
-      </h2>
-    </div>
-  </div>
-</section>
-
-
 
 <section class="hero is-light is-small">
   <div class="hero-body">
@@ -191,13 +179,37 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Performing simple household tasks based on language directives is very natural to humans, yet it remains an open challenge for AI agents. The ‘interactive instruction following’ task attempts to make progress towards building agents that jointly navigate, interact, and reason in the environment at every step.
-              To address the multifaceted problem, we propose a model that factorizes the task into interactive perception and action policy streams with enhanced components and name it as MOCA, a Modular Object-Centric Approach.
-              We empirically validate that MOCA outperforms prior arts by significant margins on the ALFRED benchmark with improved generalization.
+                Recent advancements in large language models have influenced the development of video large multimodal models (VLMMs). 
+                Previous approaches for VLMMs involve Supervised Fine-Tuning (SFT) with instruction-tuned datasets, integrating LLM with visual encoders, and additional learnable parameters. 
+                Here, aligning video with text, and vice versa, remains a challenge, primarily due to the insufficient quality and quantity of multimodal instruction-tune data compared to that of text-only. 
+                This discrepancy often results in alignments that poorly ground the video content. 
+                To address this, we present a novel alignment strategy that employs a multimodal AI system equipped with Reinforcement Learning from AI Feedback (RLAIF), providing self-preference feedback to refine itself and facilitating the alignment of video and text modalities. 
+                Our approach uniquely integrates detailed video descriptions as context into a multimodal AI system during preference feedback generation to enrich the understanding of video content, a process we call context-aware reward modeling. 
+                Empirical evaluations on various video benchmarks demonstrate that our proposed method outperforms existing approaches, including the SFT model.
             </p>
+            <!-- <br> -->
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-fullwidth">
+                <img src='static/figures/radar.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:60%">
+                <h5>Quantitative comparison of VLMMs on various video benchmarks</h5>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <!--/ Abstract. -->
+
+      <!-- Paper video.
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>-->
+      <!--/ Paper video. -->
     </div>
   </div>
 </section>
@@ -206,90 +218,96 @@
 
 <section class="section">
   <div class="container is-max-widescreen">
-    <h2 class="title is-3">Factorizing Perception and Policy</h2>
+    <h1 class="title is-3">VLM-RLAIF Framework</h1>
     <div class="content has-text-justified">
       <p>
-        An interactive instruction following agent performs a sequence of navigational steps and object interactions based on egocentric visual observations it receives from environment.
-        These actions and interactions are based on natural language instructions that the agent must follow to accomplish the task.
-        We approach this by factorizing the model into two streams, i.e. interactive perception and action policy, and train the entire architecture end-to-end.
-      </p>
-      <p>
-        Action prediction requires global scene-level understanding of the visual observation to abstract it to an action.
-On the other hand, for object interaction, the agent needs to focus on both scene-level and object-specific features to achieve precise localisation.
-Given the contrasting nature of the two tasks, MOCA has separate streams for action prediction with <span style="font-weight:bold">Action Policy Module (APM)</span> and object localisation with <span style="font-weight:bold">Interactive Perception Module (IPM)</span>.
+        To overcome the limited scalability of human feedback in RLHF, we use AI’s feedback to align multimodality between video and text, reducing the reliance on exhaustive human-annotated preferences. 
+        The training procedure of VLM-RLAIF can be summarized into three stages as follows:
+        <h5 class="title is-5">1) Supervised fine-tuning (SFT)</h5>
+          <p>
+            We first fine-tune an LLM, e.g., Vicuna, using supervised learning on synthetically generated video-text instruction-tune data. 
+            This involves the integration of a vision encoder with two linear layers and additional learnable parameters using LoRA, into the training process. 
+            This fine-tuning allows the model to better follow the instructions.
+            Additionally, we improve the SFT process by expanding the instruction-tune data and introducing simple curriculum learning. 
+            We refer to this fine-tuned model as the Video Large Multimodal model with SFT or <span style="font-weight:bold">VLM-SFT</span> for short.
+          </p>
+        <h5 class="title is-5">2) Reward modeling with AI feedback</h5>
+          <p>
+            A key aspect of the RLAIF involves leveraging a pre-trained AI model to generate human-like preferences between different responses generated from the same input.
+            To obtain human-like preference, we employ the VLM-SFT as a judge to assess preferences. 
+            Once preferences are judged, we train a reward model (RM) based on preferences using a cross-entropy loss, following the Bradley-Terry model for estimating score functions from pairwise preferences.
+            The RM give higher score reward to the better response and lower score reward to the less appropriate one in a pair of responses, thus guiding the policy model using reinforcement learning.
+          </p>
+        <h5 class="title is-5">3) Reinforcement learning from AI feedback</h5>
+          <p>
+            We finally fine-tune a supervised policy model, initialized from the VLM-SFT, aiming to optimize the scalar reward output of the trained RM by reinforcement learning. 
+            Specifically, we use the Proximal Policy Optimization (PPO) algorithm.
+          </p>
       </p>
       <div class="columns is-centered has-text-centered">
         <div class="column is-fullwidth">
-          <img src='static/figures/overview.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:100%">
+          <img src='static/figures/rlaif_feedback_teaser.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:100%">
+          <h5>Illustration of the proposed VLM-RLAIF</h5>
         </div>
       </div>
     </div>
 
-    <h3 class="title is-4">Language Guided Dynamic Filters</h3>
-    <div class="columns is-centered">
-      <div class="column is-two-quarters">
-        <div class="content has-text-justified">
-          <p>
-            Visual grounding helps the agent to exploit the relationships between language and visual features.
-            This reduces the agent’s dependence on any particular modality while encountering unseen scenarios.
-            It is a common practice to concatenate flattened visual and language features.
-            However, it might not perfectly capture the relationship between visual and textual embeddings, leading to poor performance of interactive instruction following agents.
-            Dynamic filters are conditioned on language features making them more adaptive towards varying inputs.
-            This is in contrast with traditional convolutions which have fixed weights after training and fail to adapt to diverse instructions.
-            Hence, we propose to use dynamic filters for the interactive instruction following task.
-            Particularly, we use a filter generator network comprising of fully connected layers to generate dynamic filters which attempt to capture various aspects of the language from the attended language features.
-          </p>
-        </div>
-      </div>
-    </div>
+  </div>
 
-    <h3 class="title is-4">Object-Centric Localisation</h3>
-    <div class="columns is-centered">
-      <div class="column is-two-quarters">
-        <div class="content has-text-justified">
-          <p>
-            We bifurcate mask prediction into <em>target class prediction</em> and <em>instance association</em>.
-            This bifurcation enables us to leverage the quality of pre-trained segmentation models while also ensuring accurate localisation.
-          </p>
-          <p>
-            <span style="font-weight:bold">Target Class Prediction.</span>
-MOCA first predicts the target object class that it intends to interact with at the current time step.
-The predicted class is then used to acquire the set of instance masks corresponding to the predicted class from the mask generator.
-          </p>
-          <p>
-            <span style="font-weight:bold">Instance Association.</span>
-            A straightforward solution to choose one of the correct mask instances from a pre-trained mask generator is to pick the highest confidence instance.
-            However, when it interacts with the same object over an interval, it is more important to remember the object the agent has interacted with, since its appearance might vary drastically during multiple interactions.
-            To address all the scenarios, we propose a two-way criterion to select the best instance mask.
-            The confidence based criterion chooses the mask with the highest confidence score.
-            On the contrary, the association based criterion chooses the mask whose center is closest to the one that the agent has interacted before.
-          </p>
-        </div>
-      </div>
-      <div class="column is-two-quarter">
-        <img src='static/figures/iat.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:100%">
-      </div>
-    </div>
+  <br><br>
 
-    <h3 class="title is-4">Obstruction Evasion</h3>
-    <div class="columns is-centered">
-      <div class="column is-two-quarters">
-        <div class="content has-text-justified">
-          <p>
-            The agent learns to not encounter any obstacles during training based on the expert ground truth actions.
-            However, during inference, there are various situations when the agent gets stranded around immovable objects.
-            To address such unanticipated situations, we propose an ‘obstruction evasion’ mechanism in the APM to avoid obstacles at inference time.
-            While navigating in the environment, at every time step, the agent computes the distance between visual features at the current time step and the previous time step with a tolerance hyper-parameter.
-            If the distance is within the tolerence, we regard the current state as obstruction.
-            To evade the obstruction, we remove the action that causes the obstruction from the action space and instead take the second-best action (i.e., the action with the second-highest confidence score).
-          </p>
+  <div class="container is-max-widescreen">
+    <h3 class="title is-4">Context-Aware Reward Modeling</h3>
+      <p>
+        For VLM-SFT to select preference grounded on the video, we argue that a <span style="font-weight:bold">detailed understanding of video content</span> is necessary for more accurate and contextually relevant decisions by the VLM-SFT. 
+        However, the current video encoder presents challenges in accurately encoding the temporal details of videos as they are based on the image encoder.
+      </p>
+      <br>
+      <!-- <h3 class="title is-4">Context-aware preference selection and Training the reward model</h3> -->
+      <div class="columns is-centered">
+        <div class="column is-two-quarter">
+          <div class="content has-text-justified">
+            <p>
+              We propose integrating detailed video descriptions, termed as <span style="font-weight:bold; font-style: italic;">context</span>, into the preference selection workflow to enhance VLMM's contextual clarity. 
+              The process involves segmenting the video into clips of up to 20 frames each, generating detailed descriptions for each segment using VLM-SFT with the prompt, ‘Describe this video in detail’. 
+              These descriptions are concatenated to form a narrative of the video, which is then provided to a judge model (VLM-SFT) for improved preference selection. 
+              This context allows the VLM-SFT to better understand the video content and identify the most suitable response. 
+              Integrating context with instruction inputs using a specific prompt, as shown in dotted boxes in the right Figure (2), facilitates the collection of context-aware preferences.
+            </p>
+            <p>
+              The right figure illustrates the three stages of the proposed context-aware reward modeling:
+              (1) The SFT model produces two candidate responses from the provided video and question. 
+              (2) With the video, question and responses at hand, the SFT model utilize context information and guiding prompt to evaluate the responses. 
+              (3) The reward model is trained using the preference pairs generated in the previous step as indicated in orange box. 
+              Each stage involves a model's input, indicated by a dotted box, and includes a task-specific prompt, shown in a yellow box. The first stage focuses on response generation, the second on evaluation and selection of the superior response, and the third on training the reward model.
+            </p>
+          </div>
         </div>
+        <div class="column is-fullwidth">
+          <img src='static/figures/reward_modeling.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:85%">
+          <span style="display: block; text-align: center; width: 100%; font-weight: bold;">Three stages of the context-aware reward modeling</span>
+        </div>
+        <!-- <div class="column is-two-quarter">
+          <img src='static/figures/reward_modeling.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:100%">
+        </div> -->
       </div>
-      <div class="column is-two-quarter">
-        <img src='static/figures/oe.png' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:100%">
-      </div>
-    </div>
 
+      <!-- <h3 class="title is-4">Online Text-Augmentation</h3>
+      <div class="columns is-centered">
+        <div class="column is-two-quarters">
+          <div class="content has-text-justified">
+            <p>
+              Thanks to our bi-directional Transformers architecture, we can naturally integrate the process of generating pseudo-texts to the process of learning image-to-text model and the text-to-image generation model. 
+              In the early epochs, less meaningful sentences are generated, but as training progresses, more meaningful sentences are generated. 
+              As a side-product, by supervising the model learning with intermediate goals at each time step, we expect to expedite the convergence of learning.
+            </p>
+          </div>
+        </div>
+        <div class="column is-two-quarter">
+          <img src='static/figures/ota_simple.jpg' style="margin-left: auto; margin-right: auto; display: block; border-style: none width:100%;max-width:100%">
+        </div>
+      </div> -->
+  </div>
 </section>
 
 
@@ -299,60 +317,36 @@ The predicted class is then used to acquire the set of instance masks correspond
       <h2 class="title is-3">Results</h2>
       <div class="content has-text-justified">
         <p>
-          We employ <span style="color: #305fac; font-weight:bold"><a href="https://askforalfred.com/">ALFRED</a></span> to evaluate our method.
-          There are three splits of environments in ALFRED: ‘train’, ‘validation’, and ‘test’.
-          The validation and test environments are further divided into two folds, seen and unseen, to assess the generalization capacity.
-          The primary metric is the success rate, denoted by ‘SR,’ which measures the percentage of completed tasks.
-          Another metric is the goal-condition success rate, denoted by ‘GC,’ which measures the percentage of satisfied goal conditions.
-          Finally, path-length-weighted (PLW) scores penalize SR and GC by the length of the actions that the agent takes.
+          Our method’s strength lies in generating synthetic preference feedback in large quantities. 
+          To study the benefit of large-sized data, we sweep the size of preference data from 10k – the same quantity utilized in the multimodal image-text RLHF framework (Sun et al., 2023a) – to 40k. 
+          As expected, we observe monotonic performance increases in video-based generative benchmark task by the increase in data size. 
+
+          Moreover, we qualitatively compares the performance of VLM-SFT and VLM-RLAIF, highlighting their multimodal understanding capabilities below Figure. 
+          VLM-RLAIF consistently yields more accurate answers than VLM-SFT, 
+
+          The VLM-RLAIF yields responses that are more accurately grounded in the visual input, as highlighted in <span style="color: blue;">blue</span> for accurate responses and <span style="color: red;">red</span> for less accurate ones from VLM-SFT.
+
+
         </p>
         <p>
-          As shown in the figure, MOCA shows significant improvement over the prior arts on all metrics. The higher success rate in the unseen scenes indicates its ability to generalize in novel environments.
-          We achieve an improvement of 14.42% and 3.20% in Seen and Unseen Task SR over Nguyen et al. that won ALFRED challenge in ECCV 2020.
-        </p>
-        <p>
-          For more details, please check out the <span style="color: #305fac; font-weight:bold"><a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Singh_Factorizing_Perception_and_Policy_for_Interactive_Instruction_Following_ICCV_2021_paper.pdf">paper</a></span>.
+          For more details, please check out the <span style="color: #305fac; font-weight:bold"><a href="https://arxiv.org/pdf/2402.03746" target="_new">paper</a></span>.
         </p>
         <br>
+
         <div class="columns is-centered has-text-centered">
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-full-width">
-              <img src="static/tables/comparison_with_sota.png">
-              <h5>Comparison with State of the Art</h5>
-            </div>
+          <div class="column is-full-width">
+            <img src="static/figures/performance_per_dsize.png" width="1200">
+            <h5>Effect of preference data size on video-based generative benchmark</h5>
           </div>
         </div>
 
         <div class="columns is-centered has-text-centered">
-          <div class="column is-two-quarter">
-            <img src="static/figures/qualitative_nofpp.png">
-            <h5> MOCA w/o factorization</h5>
-          </div>
-
-          <div class="column is-two-quarter">
-            <img src="static/figures/qualitative_fpp.png">
-            <h5>MOCA w/ factorization</h5>
+          <div class="column is-full-width">
+            <img src="static/figures/sft_rlaif.png" width="1000">
+            <h5>Examples of the comparative results between VLM-SFT and VLM-RLAIF in video instruction-following task</h5>
           </div>
         </div>
 
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-one-quarter">
-            <img src="static/figures/qualitative_noocl.png">
-            <h5> MOCA w/o OCL</h5>
-          </div>
-          <div class="column is-one-quarter">
-            <img src="static/figures/qualitative_ocl.png">
-            <h5> MOCA w/ OCL</h5>
-          </div>
-          <div class="column is-one-quarter">
-            <img src="static/figures/qualitative_noocl2.png">
-            <h5> MOCA w/o OCL</h5>
-          </div>
-          <div class="column is-one-quarter">
-            <img src="static/figures/qualitative_ocl2.png">
-            <h5> MOCA w/ OCL</h5>
-          </div>
-        </div>
 
       </div>
     </div>
@@ -363,15 +357,14 @@ The predicted class is then used to acquire the set of instance masks correspond
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{singh2021factorizing,
-  author    = {Singh, Kunal Pratap and Bhambri, Suvaansh and Kim, Byeonghwi and Mottaghi, Roozbeh and Choi, Jonghyun},
-  title     = {Factorizing Perception and Policy for Interactive Instruction Following},
-  booktitle = {ICCV},
-  year      = {2021},
+    <pre><code>@inproceedings{ahnCYKC24,
+  author    = {Ahn, Daechul and Choi, Yura and Yu, Youngjae and Kang, Dongyeop and Choi, Jonghyun},
+  title     = {Tuning Large Multimodal Models for Videos using Reinforcement Learning from AI Feedback},
+  booktitle = {ACL},
+  year      = {2024},
 }</code></pre>
   </div>
 </section>
-
 
 <footer class="footer">
   <div class="container">
@@ -384,24 +377,6 @@ The predicted class is then used to acquire the set of instance masks correspond
     </div>
   </div>
 </footer>
-
-<!-- Default Statcounter code for MOCA
-https://bhkim94.github.io/projects/MOCA/ -->
-<script type="text/javascript">
-var sc_project=12971290;
-var sc_invisible=1;
-var sc_security="fcba25a8";
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
-<noscript><div class="statcounter"><a title="Web Analytics
-Made Easy - Statcounter" href="https://statcounter.com/"
-target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/12971290/0/fcba25a8/1/"
-alt="Web Analytics Made Easy - Statcounter"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
 
 </body>
 </html>
