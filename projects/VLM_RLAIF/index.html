@@ -42,32 +42,6 @@
 </head>
 <body>
 
-  <!-- <a class="navbar-item" href="https://yuuraa.github.io"> -->
-  <a class="navbar-item" href="../..">
-    <span class="icon">
-        <i class="fas fa-home"></i>
-    </span>
-    </a>
-
-  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div class="navbar-menu">
-      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-        <a class="navbar-item" href="https://yuuraa.github.io">
-        <span class="icon">
-            <i class="fas fa-home"></i>
-        </span>
-        </a>
-  
-    </div>
-  </nav>   -->
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -318,33 +292,31 @@
       <h2 class="title is-3">Results</h2>
       <div class="content has-text-justified">
         <p>
-          Our method’s strength lies in generating synthetic preference feedback in large quantities. 
-          To study the benefit of large-sized data, we sweep the size of preference data from 10k – the same quantity utilized in the multimodal image-text RLHF framework (Sun et al., 2023a) – to 40k. 
-          As expected, we observe monotonic performance increases in video-based generative benchmark task by the increase in data size. 
-
-          Moreover, we qualitatively compares the performance of VLM-SFT and VLM-RLAIF, highlighting their multimodal understanding capabilities below Figure. 
-          VLM-RLAIF consistently yields more accurate answers than VLM-SFT, 
-
-          The VLM-RLAIF yields responses that are more accurately grounded in the visual input, as highlighted in <span style="color: blue;">blue</span> for accurate responses and <span style="color: red;">red</span> for less accurate ones from VLM-SFT.
-
-
+          We quantitatively evaluate VLMMs on the video-based generative performance benchmark that measures five criteria of generated text. 
+          In specific, these assess the relevance of the model’s output to the video content, its capacity to capture essential details and contextual information, its understanding of temporal sequences, and the consistency in responding to varied yet related queries. 
+          The VLM-RLAIF performs on par with GPT-4V (OpenAI, 2023), which requires much more computational resources than ours (i.e., not a fair comparison), and outperforms previous approaches and the VLM-SFT.
         </p>
         <p>
-          For more details, please check out the <span style="color: #305fac; font-weight:bold"><a href="https://arxiv.org/pdf/2402.03746" target="_new">paper</a></span>.
+          Moreover, we qualitatively compares the performance of VLM-SFT and VLM-RLAIF, highlighting their multimodal understanding capabilities below Figure. 
+          VLM-RLAIF consistently yields more accurate answers than VLM-SFT, 
+          The VLM-RLAIF yields responses that are more accurately grounded in the visual input, as highlighted in <span style="color: blue;">blue</span> for accurate responses and <span style="color: red;">red</span> for less accurate ones from VLM-SFT.
+        </p>
+        <p>
+          For more information, please check out the <span style="color: #305fac; font-weight:bold"><a href="https://arxiv.org/pdf/2402.03746" target="_new">paper</a></span>.
         </p>
         <br>
 
         <div class="columns is-centered has-text-centered">
           <div class="column is-full-width">
-            <img src="static/figures/performance_per_dsize.png" width="1200">
-            <h5>Effect of preference data size on video-based generative benchmark</h5>
+            <img src="static/tables/rlaif_result.jpg" width="1200">
+            <h5>Quantitative comparison between different VLMMs on video-based generative performance benchmark</h5>
           </div>
         </div>
 
         <div class="columns is-centered has-text-centered">
           <div class="column is-full-width">
-            <img src="static/figures/sft_rlaif.png" width="1000">
-            <h5>Examples of the comparative results between VLM-SFT and VLM-RLAIF in video instruction-following task</h5>
+            <img src="static/figures/sft_rlaif.png" width="1100">
+            <h5>Qualitative examples of the comparative results between VLM-SFT and VLM-RLAIF in video instruction-following task</h5>
           </div>
         </div>
 
