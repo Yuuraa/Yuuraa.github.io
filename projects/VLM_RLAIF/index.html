@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/slideshow.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
@@ -38,6 +39,7 @@
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/slideshow.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
 <body>
@@ -312,18 +314,42 @@
         </p>
         <br>
 
+        <h5>Quantitative comparison between different VLMMs on video-based generative performance benchmark</h5>
         <div class="columns is-centered has-text-centered">
           <div class="column is-full-width">
             <img src="static/tables/rlaif_result.jpg" width="1200">
-            <h5>Quantitative comparison between different VLMMs on video-based generative performance benchmark</h5>
           </div>
         </div>
 
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <img src="static/figures/sft_rlaif.png" width="1100">
-            <h5>Qualitative examples of the comparative results between VLM-SFT and VLM-RLAIF in video instruction-following task</h5>
-          </div>
+        <!-- SLIDESHOW SAMPLE IMAGES -->
+        <h5>Qualitative examples of the comparative results between VLM-SFT and VLM-RLAIF in video instruction-following task</h5>
+        <div class="slideshow-container">
+          <div class="slide" style="display: block;">
+            <img class="slideimg" src="static/figures/quali_rlaif_vs_sft/supp_quali_0.png" alt="Image 1">
+           </div>
+           <div class="slide">
+            <img class="slideimg" src="static/figures/quali_rlaif_vs_sft/supp_quali_1.png" alt="Image 2">
+           </div>
+           <div class="slide">
+            <img class="slideimg" src="static/figures/quali_rlaif_vs_sft/supp_quali_2.png" alt="Image 3">
+           </div>
+           <div class="slide">
+            <img class="slideimg" src="static/figures/quali_rlaif_vs_sft/supp_quali_3.png" alt="Image 4">
+           </div>
+           <div class="slide">
+            <img class="slideimg" src="static/figures/quali_rlaif_vs_sft/supp_quali_4.png" alt="Image 5">
+           </div>
+           <div class="slide">
+            <img class="slideimg" src="static/figures/quali_rlaif_vs_sft/supp_quali_5.png" alt="Image 6">
+           </div>
+           <div class="slide">
+            <img class="slideimg" src="static/figures/quali_rlaif_vs_sft/supp_quali_6.png" alt="Image 7">
+           </div>
+           <div class="slide">
+            <img class="slideimg" src="static/figures/quali_rlaif_vs_sft/supp_quali_7.png" alt="Image 8">
+           </div>
+          <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+          <a class="next" onclick="changeSlide(1)">&#10095;</a>
         </div>
 
 
