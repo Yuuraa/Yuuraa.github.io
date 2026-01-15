@@ -1,3 +1,33 @@
+/* 링크 기본 스타일 */
+a.custom-link {
+  color: #BF56D9; /* 선명한 라벤더색 (Option A) */
+  text-decoration: none; /* 기본 밑줄 제거 */
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: all 0.3s ease; /* 부드러운 애니메이션 */
+}
+
+/* 마우스 올렸을 때 (Hover) */
+a.custom-link:hover {
+  background-color: #7F56D9; /* 원래 좋아하시던 연한 색 (Original) */
+  color: #FFFFFF; /* 글자는 흰색으로 반전 */
+  
+}
+.color-text {
+  /* 그라데이션을 이용한 형광펜 효과 */
+  color: #BF56D9; /* 선명한 라벤더색 (Option A) */
+  display: inline;
+  font-weight: bold;
+
+}
+.highlight-text {
+  /* 그라데이션을 이용한 형광펜 효과 */
+  background: linear-gradient(to top, #C0ADFE 40%, transparent 40%);
+  color: #333333; /* 글자는 가독성 좋은 진한 회색/검정 유지 */
+  font-weight: bold;
+  display: inline;
+}
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -100,7 +130,7 @@ heading2 {
 
 papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700
 }
 
