@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="EgoPointVQA: Gesture-Based Egocentric Video Question Answering">
+  <meta name="keywords" content="EgoPointVQA, HINT, Egocentric Video, Pointing Gesture, VQA, Deictic, MLLM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EgoPointVQA: Gesture-Based Egocentric Video Question Answering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <style>
+    :root{--primary:#3273dc;--accent:#e8734a;--dark:#1a1a2e;--grey:#555;--alt:#f9fafb;--border:#e5e7eb;--shadow:0 2px 12px rgba(0,0,0,0.06)}
+    body{font-family:'Noto Sans',sans-serif;color:#333}
+    .hero-body{padding:3rem 1.5rem 2rem}
+    .pub-title{font-weight:700;font-size:2.4rem;line-height:1.25;color:var(--dark)}
+    .pub-venue{display:inline-block;background:var(--primary);color:#fff;padding:4px 16px;border-radius:20px;font-size:.95rem;font-weight:600;margin-top:.75rem;letter-spacing:.5px}
+    .pub-authors{margin-top:1rem;font-size:1.1rem;color:var(--grey)}
+    .pub-authors a{color:var(--primary);text-decoration:none}
+    .pub-authors a:hover{text-decoration:underline}
+    .aff{font-size:.92rem;color:#888}
+    .link-block{display:inline-flex;align-items:center;gap:6px;background:var(--dark);color:#fff;padding:8px 18px;border-radius:8px;font-size:.92rem;font-weight:600;margin:5px 4px;transition:background .2s,transform .15s;text-decoration:none}
+    .link-block:hover{background:#333;color:#fff;transform:translateY(-1px)}
+    .link-block.is-light{background:#f0f0f0;color:var(--dark)}
+    .link-block.is-light:hover{background:#e0e0e0;color:var(--dark)}
+    .section{padding:2.5rem 1.5rem}
+    .section.alt{background:var(--alt)}
+    .sec-title{font-weight:700;font-size:1.75rem;color:var(--dark);margin-bottom:1.2rem;text-align:center}
+    .ctxt{max-width:820px;margin:0 auto;font-size:1.02rem;line-height:1.75;color:#444;text-align:justify}
+    .fig-ph{background:linear-gradient(135deg,#f5f7fa 0%,#e8ecf1 100%);border:2px dashed #c5cdd8;border-radius:12px;padding:40px 24px;text-align:center;color:#7a8a9e;font-size:.95rem;margin:1.5rem auto;max-width:900px;position:relative;overflow:hidden}
+    .fig-ph::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(200,210,225,.15) 20px,rgba(200,210,225,.15) 21px);pointer-events:none}
+    .fig-ph .ph-icon{font-size:2.5rem;color:#a0b0c4;margin-bottom:12px}
+    .fig-ph .ph-label{font-weight:700;font-size:1rem;color:#5a6a7e;margin-bottom:6px}
+    .fig-ph .ph-desc{font-size:.88rem;color:#8a9aae;max-width:600px;margin:0 auto;line-height:1.5}
+    .fig-cap{text-align:center;font-size:.9rem;color:#666;margin-top:.6rem;max-width:820px;margin-left:auto;margin-right:auto;line-height:1.5}
+    .fig-cap strong{color:#333}
+    .rtw{max-width:960px;margin:1.5rem auto;overflow-x:auto}
+    .rt{width:100%;border-collapse:collapse;font-size:.88rem}
+    .rt thead th{background:var(--dark);color:#fff;padding:10px 12px;text-align:center;font-weight:600;font-size:.85rem;white-space:nowrap}
+    .rt thead th:first-child{text-align:left;border-radius:8px 0 0 0}
+    .rt thead th:last-child{border-radius:0 8px 0 0}
+    .rt tbody td{padding:9px 12px;text-align:center;border-bottom:1px solid var(--border)}
+    .rt tbody td:first-child{text-align:left;font-weight:600}
+    .rt tbody tr:hover{background:#f7f8fc}
+    .rt tbody tr.hl{background:#e6f2ff}
+    .rt tbody tr.hl td{font-weight:600}
+    .rt .best{color:var(--accent);font-weight:700}
+    .rt .sh td{background:#f0f2f5;font-weight:700;font-size:.82rem;color:#555;padding:6px 12px;text-transform:uppercase;letter-spacing:.5px}
+    .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:1.5rem auto}
+    .tc{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px 16px;text-align:center;box-shadow:var(--shadow);transition:transform .2s}
+    .tc:hover{transform:translateY(-2px)}
+    .tc .ti{font-size:1.6rem;margin-bottom:8px}
+    .tc .tn{font-weight:700;font-size:1rem;color:var(--dark);margin-bottom:4px}
+    .tc .td{font-size:.82rem;color:#777;line-height:1.4}
+    .cl{max-width:820px;margin:1.2rem auto;padding:0;list-style:none}
+    .cl li{padding:12px 0 12px 32px;position:relative;font-size:1rem;line-height:1.6;color:#444;border-bottom:1px solid #f0f0f0}
+    .cl li:last-child{border-bottom:none}
+    .cl li::before{content:'';position:absolute;left:6px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--primary)}
+    .sb{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:2rem auto;max-width:800px}
+    .si{text-align:center}
+    .sn{font-size:2rem;font-weight:700;color:var(--primary)}
+    .sl{font-size:.85rem;color:#888;margin-top:2px}
+    .bib{max-width:820px;margin:1rem auto;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:8px;padding:20px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.82rem;line-height:1.6;overflow-x:auto;white-space:pre-wrap;color:#24292e}
+    footer{padding:2rem 1.5rem;text-align:center;font-size:.85rem;color:#999;background:var(--alt);border-top:1px solid var(--border)}
+    footer a{color:var(--primary);text-decoration:none}
+    @media(max-width:768px){.pub-title{font-size:1.6rem}.tg{grid-template-columns:1fr}.sb{gap:20px}.sn{font-size:1.5rem}}
+  </style>
+</head>
+<body>
+  <a class="navbar-item" href="../..">
+    <span class="icon">
+        <i class="fas fa-home"></i>
+    </span>
+  </a>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="pub-title">Do You See What I Am Pointing At?<br><span style="font-size:.78em;font-weight:600;color:#555">Gesture-Based Egocentric Video Question Answering</span></h1>
+          <h1 class="title is-4 publication-title" style="color: #FF0066;">
+            CVPR 2026
+          </h1>
+      <div class="pub-authors" style="margin-top:1.2rem">
+        <span><a href="https://yuuraa.github.io/">Yura Choi</a><sup>1</sup>,</span>
+        <span><a href="https://roymiles.github.io">Roy Miles</a><sup>2</sup>,</span>
+        <span><a href="https://rolpotamias.github.io">Rolandos Alexandros Potamias</a><sup>1</sup>,</span>
+        <span><a href="https://therevanchist.github.io">Ismail Elezi</a><sup>2</sup>,</span>
+        <span><a href="https://jiankangdeng.github.io">Jiankang Deng</a><sup>1</sup>,</span>
+        <span><a href="https://wp.doc.ic.ac.uk/szafeiri">Stefanos Zafeiriou</a><sup>1</sup></span>
+      </div>
+      <div class="aff" style="margin-top:6px"><sup>1</sup>Imperial College London &nbsp;&nbsp; <sup>2</sup>Huawei Noah's Ark Lab, UK</div>
+      <div style="margin-top:1.4rem">
+        <a class="link-block" href="#"><i class="fas fa-file-pdf"></i> Paper</a>
+        <a class="link-block" href="#"><i class="ai ai-arxiv"></i> arXiv</a>
+        <a class="link-block" href="#"><i class="fab fa-github"></i> Code</a>
+        <a class="link-block is-light" href="#"><i class="fas fa-database"></i> Dataset</a>
+        <a class="link-block is-light" href="#"><i class="fas fa-robot"></i> Model</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:.5rem">
+  <div class="container">
+    <!-- <div class="fig-ph" style="min-height:280px">
+      <div class="ph-icon"><i class="fas fa-hand-point-right"></i></div>
+      <div class="ph-label">Figure 1 &mdash; Teaser</div>
+      <div class="ph-desc"><strong>Left:</strong> EgoPointVQA includes questions with deictic pronouns requiring gesture understanding &mdash; identifying single pointed objects or tracking multiple references across frames.<br><strong>Right:</strong> State-of-the-art models (GPT-4o, Qwen3-VL-32B) fail to resolve questions with pointing gestures, incorrectly stating two pots have different colors despite both being black.</div>
+    </div> -->
+    <img src="teaserx.png" alt="EgoPointVQA Teaser" style="display:block; max-width:900px; margin:1.5rem auto; border-radius:12px;">
+    <p class="fig-cap"><strong>Figure 1.</strong> Illustration of <strong>EgoPointVQA</strong>. Current MLLMs struggle to ground deictic pronouns with pointing gestures.</p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="sec-title">Abstract</h2>
+    <div class="ctxt">Understanding and answering questions based on a user's pointing gesture is essential for next-generation egocentric AI assistants. However, current Multimodal Large Language Models (MLLMs) struggle with such tasks due to the lack of gesture-rich data and their limited ability to perform fine-grained spatial reasoning from egocentric video. To address this, we introduce <strong>EgoPointVQA</strong>, a dataset and benchmark for gesture-grounded egocentric question answering, comprising 4,000 synthetic and 400 real-world videos across multiple deictic reasoning tasks. Built upon it, we further propose <strong>Hand Intent Tokens (HINT)</strong>, which encode tokens derived from 3D hand keypoints using an off-the-shelf reconstruction model and interleave them with the model input to provide explicit spatial and temporal context for interpreting pointing intent. We show that our model outperforms others across different backbones and model sizes. In particular, <strong>HINT-14B achieves 68.1% accuracy</strong> on average over 6 tasks, surpassing the state-of-the-art InternVL3-14B by 8.6%.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="sec-title">EgoPointVQA at a Glance</h2>
+    <div class="sb">
+      <div class="si"><div class="sn">4,400</div><div class="sl">Total Videos</div></div>
+      <div class="si"><div class="sn">18,745</div><div class="sl">QA Pairs</div></div>
+      <div class="si"><div class="sn">6</div><div class="sl">Task Types</div></div>
+      <div class="si"><div class="sn">20</div><div class="sl">Participants</div></div>
+      <div class="si"><div class="sn">+8.6%</div><div class="sl">Over SoTA</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="sec-title">Key Contributions</h2>
+    <ul class="cl">
+      <li><strong>EgoPointVQA Dataset &amp; Benchmark</strong> &mdash; The first dataset specifically designed for deictic question answering in egocentric videos, where user gestures and pointing behaviors are central to interpretation. It contains 4,000 synthetic and 400 real-world videos with 18,745 QA pairs across 6 task categories.</li>
+      <li><strong>Hand Intent Tokens (HINT)</strong> &mdash; A simple yet effective approach that encodes gesture tokens derived from off-the-shelf 3D hand keypoints and interleaves them with the model input, providing explicit spatial and temporal context for interpreting pointing intent.</li>
+      <li><strong>State-of-the-Art Performance</strong> &mdash; HINT achieves state-of-the-art performance on gesture-grounded QA tasks, outperforming existing MLLMs across all backbone architectures and establishing a strong foundation for future research.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="sec-title">Task Taxonomy</h2>
+    <p class="ctxt" style="text-align:center;margin-bottom:1.2rem">EgoPointVQA decomposes deictic question answering into six categories, each testing distinct reasoning capabilities.</p>
+    <div class="tg">
+      <div class="tc"><div class="ti">&#128269;</div><div class="tn">Reference</div><div class="td">"What is it?" &mdash; Identify the object the user is pointing at.</div></div>
+      <div class="tc"><div class="ti">&#128290;</div><div class="tn">Counting</div><div class="td">"How many of these?" &mdash; Count identical or similar objects in the view.</div></div>
+      <div class="tc"><div class="ti">&#128208;</div><div class="tn">Spatial</div><div class="td">"Where is this located?" &mdash; Understand relative position of the referenced object.</div></div>
+      <div class="tc"><div class="ti">&#9201;</div><div class="tn">Temporal</div><div class="td">"What is the second object?" &mdash; Resolve references across sequential gestures.</div></div>
+      <div class="tc"><div class="ti">&#127912;</div><div class="tn">Attribute</div><div class="td">"What color is this?" &mdash; Identify properties like color, shape, or material.</div></div>
+      <div class="tc"><div class="ti">&#128172;</div><div class="tn">Feedback</div><div class="td">"How can I use this?" &mdash; Answer about the object's function or relevance.</div></div>
+    </div>
+    <!-- <div class="fig-ph" style="margin-top:2rem;min-height:220px"> -->
+      <!-- <div class="ph-icon"><i class="fas fa-th-large"></i></div>
+      <div class="ph-label">Figure 2 &mdash; Task Taxonomy Examples</div>
+      <div class="ph-desc">Six example egocentric video frames, each showing a deictic question with pointing gesture and multiple-choice options for Reference, Counting, Spatial, Temporal, Attribute, and Feedback tasks. Pointed objects highlighted with red circles.</div> -->
+    <!-- </div> -->
+    <img src="task_taxonomy_grey.png" alt="EgoPointVQA Taxonomy" style="display:block; max-width:900px; margin:1.5rem auto; border-radius:12px;">
+    <p class="fig-cap"><strong>Figure 2.</strong> Task taxonomy and examples from <strong>EgoPointVQA</strong>.</p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="sec-title">Dataset Generation Pipeline</h2>
+    <div class="ctxt" style="text-align:center;margin-bottom:1.2rem">We generate EgoPointVQA through a three-stage automated pipeline combining synthetic and real-world egocentric videos.</div>
+    <!-- <div class="fig-ph" style="min-height:260px">
+      <div class="ph-icon"><i class="fas fa-project-diagram"></i></div>
+      <div class="ph-label">Figure 4 &mdash; Generation Pipeline</div>
+      <div class="ph-desc"><strong>Stage 1:</strong> Dense scene information extraction from AI2-THOR (synthetic) or annotator MLLM + GroundingDINO + SAM2 (real).<br><strong>Stage 2:</strong> Target-specific multiple-choice QA generation with template-based questions and hard negative distractors.<br><strong>Stage 3:</strong> Question rephrasing via GPT-4o (object IDs &rarr; deictic pronouns) and manual quality filtering.</div>
+    </div> -->
+    <img src="egovideoqa_data_collection4_simple.png" alt="Generation pipeline" 
+         style="display:block; max-width:900px; max-height:500px; object-fit:contain; margin:1.5rem auto; border-radius:12px;">
+    <!-- style="display:block; max-width:900px; margin:1.5rem auto; border-radius:12px;"> -->
+    <p class="fig-cap"><strong>Figure 3.</strong> EgoPointVQA generation pipeline from simulated and real egocentric videos.</p>
+    <!-- <div class="fig-ph" style="margin-top:2rem;min-height:180px">
+      <div class="ph-icon"><i class="fas fa-cube"></i></div>
+      <div class="ph-label">Figure 4 &mdash; Synthetic Video Samples</div>
+      <div class="ph-desc">Grid of frames from AI2-THOR synthetic videos showing diverse indoor scenes (kitchens, living rooms, bathrooms, offices) with varied lighting and multiple visible objects.</div>
+    </div>
+    <p class="fig-cap"><strong>Figure 4.</strong> Visualization of videos in EgoPointVQA.</p> -->
+    <!-- Statistics image -->
+    <img src="data_statistics2.png" alt="EgoPointVQA statistics" style="display:block; max-width:900px; margin:1.5rem auto; border-radius:12px;">
+    <p class="fig-cap"><strong>Figure 5.</strong> EgoPointVQA statistics &mdash; task type distributions and common object word clouds.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="sec-title">Method: Hand Intent Tokens (HINT)</h2>
+    <div class="ctxt">Given an egocentric video and a deictic question (e.g., "What is this?"), our goal is to generate the correct answer. Current MLLMs struggle because they fail to (1) recognize that the question is ambiguous, and (2) identify the user's pointing intent. HINT processes the video in two parallel streams: a standard <strong>visual stream</strong> and a new <strong>hand-intent stream</strong>.</div>
+    <!-- <div class="fig-ph" style="margin-top:1.5rem;min-height:260px">
+      <div class="ph-icon"><i class="fas fa-brain"></i></div>
+      <div class="ph-label">Figure 6 &mdash; HINT Architecture</div>
+      <div class="ph-desc"><strong>Visual Stream:</strong> Each frame passes through Vision Encoder (InternViT) &rarr; Vision Projector (MLP) &rarr; visual tokens V<sub>t</sub>.<br><strong>Hand-Intent Stream:</strong> WiLoR extracts 21 3D hand keypoints K<sub>t</sub> &rarr; Keypoint Adapter (LayerNorm &rarr; MLP w/ GeLU &rarr; Linear) &rarr; Hand Intent Token H<sub>t</sub>.<br><strong>Interleaving:</strong> V<sub>t</sub> and H<sub>t</sub> interleaved per frame and fed to the LLM with LoRA. Keypoints included only when detection confidence &ge; 0.5.</div>
+    </div> -->
+    <img src="METHOD.png" alt="HINT method" style="display:block; max-width:900px; margin:1.5rem auto; border-radius:12px;">
+    <p class="fig-cap"><strong>Figure 6.</strong> HINT overall architecture. V<sub>t</sub> = visual token, K<sub>t</sub> = keypoint feature, H<sub>t</sub> = hand intent token.</p>
+    <div class="ctxt" style="margin-top:1.5rem"><strong>Keypoint Adapter.</strong> The adapter projects 21 distinct 3D keypoints into a single Hand Intent Token that holistically represents the hand posture. The 63-dimensional flattened vector passes through LayerNorm, a two-layer MLP with GeLU activation, producing a token matching the LLM's hidden dimension. Tokens below the confidence threshold are discarded.</div>
+    <div class="ctxt" style="margin-top:1rem"><strong>Frame-Keypoint Interleaving.</strong> Hand intent tokens are interleaved with visual tokens so the LLM can jointly reason over visual content and pointing direction. This construction enables the LLM to understand deictic context and temporally anchored references, while adding less than 1% token overhead.</div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="sec-title">Results</h2>
+    <div class="ctxt" style="text-align:center;margin-bottom:.5rem">Performance of different MLLMs on the EgoPointVQA test set (multiple-choice accuracy %).</div>
+    <div class="rtw">
+      <table class="rt">
+        <thead><tr><th>Method</th><th>Size</th><th>Refer.</th><th>Temporal</th><th>Spatial</th><th>Count</th><th>Attr.</th><th>Feed.</th><th>Avg.</th></tr></thead>
+        <tbody>
+          <tr class="sh"><td colspan="9">Proprietary Models</td></tr>
+          <tr><td>GPT-5</td><td>&mdash;</td><td>75.6</td><td>53.6</td><td>62.3</td><td>50.0</td><td>56.1</td><td>77.8</td><td>62.6</td></tr>
+          <tr><td>GPT-4o</td><td>&mdash;</td><td>56.1</td><td>29.5</td><td>43.1</td><td>44.8</td><td>41.5</td><td>65.7</td><td>46.8</td></tr>
+          <tr class="sh"><td colspan="9">Open-Source MLLMs &ge; 32B</td></tr>
+          <tr><td>Qwen3-VL</td><td>32B</td><td>63.7</td><td>67.9</td><td>65.8</td><td>66.7</td><td>63.4</td><td>77.2</td><td>67.5</td></tr>
+          <tr><td>InternVL3</td><td>78B</td><td>71.4</td><td>71.4</td><td>62.3</td><td>45.8</td><td>68.3</td><td>80.1</td><td>66.6</td></tr>
+          <tr class="sh"><td colspan="9">Open-Source MLLMs &le; 14B</td></tr>
+          <tr><td>InternVL3</td><td>8B</td><td>66.1</td><td>57.5</td><td>63.2</td><td>33.3</td><td>51.3</td><td>76.8</td><td>58.0</td></tr>
+          <tr><td>InternVL3</td><td>14B</td><td>63.1</td><td>66.1</td><td>61.4</td><td>50.0</td><td>58.5</td><td>77.2</td><td>62.7</td></tr>
+          <tr><td>EgoGPT</td><td>7B</td><td>67.3</td><td>46.4</td><td>50.9</td><td>47.9</td><td>48.8</td><td>74.1</td><td>55.9</td></tr>
+          <tr><td>LLaVA-OneVision</td><td>7B</td><td>54.2</td><td>42.9</td><td>53.5</td><td>35.4</td><td>46.3</td><td>67.1</td><td>49.9</td></tr>
+          <tr class="sh"><td colspan="9">HINT (Ours)</td></tr>
+          <tr class="hl"><td>HINT<sub>LLaVA-OV</sub></td><td>7B</td><td>60.7</td><td>50.0</td><td>56.1</td><td>39.6</td><td>48.8</td><td>71.1</td><td>54.4</td></tr>
+          <tr class="hl"><td>HINT<sub>InternVL3-8B</sub></td><td>8B</td><td>75.0</td><td>66.1</td><td>64.9</td><td>35.4</td><td>61.0</td><td>79.8</td><td>63.7</td></tr>
+          <tr class="hl"><td>HINT<sub>InternVL3-14B</sub></td><td>14B</td><td class="best">73.8</td><td class="best">69.6</td><td class="best">64.9</td><td class="best">54.2</td><td class="best">63.4</td><td class="best">82.5</td><td class="best">68.1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fig-cap"><strong>Table 1.</strong> HINT (highlighted) consistently improves over baselines. HINT-14B achieves the best average of <strong>68.1%</strong>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="sec-title">Ablation Study</h2>
+    <div class="ctxt" style="text-align:center;margin-bottom:1rem">We ablate key components of HINT using InternVL3-8B as the backbone.</div>
+    <div class="rtw" style="max-width:680px">
+      <table class="rt">
+        <thead><tr><th>SFT</th><th>Hand Intent</th><th>Refer.</th><th>Temporal</th><th>Spatial</th><th>Attr.</th></tr></thead>
+        <tbody>
+          <tr><td style="text-align:center">&#10007;</td><td style="text-align:center">&#10007;</td><td>66.1</td><td>58.9</td><td>63.2</td><td>51.3</td></tr>
+          <tr><td style="text-align:center">&#10003;</td><td style="text-align:center">&#10007;</td><td>68.5</td><td>60.7</td><td>59.6</td><td>56.7</td></tr>
+          <tr class="hl"><td style="text-align:center">&#10003;</td><td style="text-align:center">&#10003;</td><td class="best">75.0</td><td class="best">66.1</td><td class="best">64.9</td><td class="best">61.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fig-cap"><strong>Table 2.</strong> Ablation of HINT components. Combining SFT with Hand Intent Tokens yields the largest gains.</p>
+    <div class="rtw" style="max-width:600px;margin-top:2rem">
+      <table class="rt">
+        <thead><tr><th>Hand Intent Modeling</th><th>Refer.</th><th>Temporal</th><th>Spatial</th></tr></thead>
+        <tbody>
+          <tr><td>None (SFT only)</td><td>68.5</td><td>60.7</td><td>59.6</td></tr>
+          <tr><td>Visual Keypoints</td><td>57.1</td><td>60.7</td><td>61.4</td></tr>
+          <tr><td>Visual Arrow from Fingertip</td><td>70.2</td><td>60.7</td><td>62.3</td></tr>
+          <tr><td>3D Keypoints in Text</td><td>68.5</td><td>55.4</td><td>58.8</td></tr>
+          <tr><td>2D Keypoints in Text</td><td>69.0</td><td>57.1</td><td>59.6</td></tr>
+          <tr class="hl"><td>HINT (Ours)</td><td class="best">75.0</td><td class="best">66.1</td><td class="best">64.9</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fig-cap"><strong>Table 4.</strong> Different methods of hand intent modeling. HINT with a learned keypoint adapter outperforms all alternatives.</p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="sec-title">BibTeX</h2>
+    <div class="bib">@inproceedings{choi2026egopointvqa,
+  author    = {Choi, Yura and Miles, Roy and Potamias, Rolandos Alexandros and Elezi, Ismail and Deng, Jiankang and Zafeiriou, Stefanos},
+  title     = {Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering},
+  booktitle = {CVPR},
+  year      = {2026}
+}</div>
+
+  </div>
+</section>
+
+<footer>The website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a>.</footer>
+
+</body>
+</html>
